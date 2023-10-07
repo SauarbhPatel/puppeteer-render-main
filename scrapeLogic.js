@@ -1,9 +1,11 @@
-const puppeteer = require("puppeteer");
+// const puppeteer = require("puppeteer");
+const puppeteer = require("puppeteer-core");
 require("dotenv").config();
 
 const scrapeLogic = async (res) => {
+    console.log(puppeteer.executablePath());
     const browser = await puppeteer.launch({
-        headless: false,
+        headless: true,
         args: [
             "--disable-setuid-sandbox",
             "--no-sandbox",
